@@ -1,8 +1,8 @@
 {
   "name": "color-the-world",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "CreatePage": "http://ionicframework.com/",
+  "author": "Quinn James",
+  "homepage": "http://www.quinnjames.net",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
