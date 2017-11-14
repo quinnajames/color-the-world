@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GalleryPage, CreatePage, AboutPage } from '../pages';
+import { GalleryPage, CreatePage, SettingsPage } from '../pages';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -7,7 +7,7 @@ import { GalleryPage, CreatePage, AboutPage } from '../pages';
 export class TabsPage {
 
   tab1Root = CreatePage;
-  tab2Root = AboutPage;
+  tab2Root = SettingsPage;
   tab3Root = GalleryPage;
 
   constructor() {
