@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { GalleryPage, CreatePage, SettingsPage } from '../pages';
+import { GalleryPage, SettingsPage } from '../pages';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = CreatePage;
+  tab1Root = 'CreatePage';
   tab2Root = SettingsPage;
   tab3Root = GalleryPage;
 
