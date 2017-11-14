@@ -3,9 +3,9 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-contact',
-  templateUrl: 'contact.html'
+  templateUrl: 'gallery.html'
 })
-export class ContactPage {
+export class GalleryPage {
 
   constructor(public navCtrl: NavController) {
 
