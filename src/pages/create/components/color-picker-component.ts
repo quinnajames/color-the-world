@@ -5,7 +5,8 @@ import { Component } from '@angular/core';
   <div>Color picker
   <p>
   <input type="color" id="html5colorpicker"
-  [(value)]="value" (change)="colorChange($event)">
+  (ngModelChange)="colorChange($event)"
+  [ngModel]="value">
   </p></div>
   `
 })
@@ -15,8 +16,6 @@ export class ColorPickerComponent{
     this.value = '#ff9000';
   }
   colorChange(e) {
-    this.value = document.getElementsByTagName('input')[0].value;
-    console.log(this.value);
-    
+    console.log(e);
   }
 }
