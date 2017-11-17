@@ -18,7 +18,8 @@ export class CreatePage {
   handleColorChange(event) {
     console.log(`handleColorChange(${event})`);
     this.currentColor = event;
-    this.hsvColor = this.cl.rgbToHsv(event);
+    this.hsvColor = this.cl.hexToHsv(event);
+    console.log(this.cl.hsvToHex(this.hsvColor));
   }
 
 
