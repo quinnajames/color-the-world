@@ -11,5 +11,6 @@
   </p>
   <color-picker (onColorChange)="handleColorChange($event)"></color-picker>
   <p>Your chosen color: <code>{{currentColor}}</code></p>
+  <p>HSV: <code *ngIf="hsvColor">{{hsvColor[0]}} {{hsvColor[1]}} {{hsvColor[2]}}</code></p>
   <p>You'll be able to copy colors to the clipboard easily.</p>
 </ion-content>

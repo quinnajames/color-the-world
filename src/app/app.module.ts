@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { GalleryPage, TabsPage, SettingsPage } from '../pages/pages';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ColorService } from '../services/color.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    ColorService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
