@@ -37,7 +37,7 @@ export class ColorService {
       else if (rgbMax === g)  h_ = (b - r) / c + 2;
       else                    h_ = (r - g) / c + 4;
     }
-    let h = this.mod(Math.round(60 * h_),360);
+    let h = (this.mod(60 * h_,360));
 
     console.log('hue: ' + h);
 
@@ -47,9 +47,9 @@ export class ColorService {
 
     let s = 0;
     if (v > 0) {
-      s = Math.round((c / v) * 100);
+      s = ((c / v) * 100);
     }
-    v = Math.round(v * 100 / 255);
+    v = (v * 100 / 255);
     return [h,s,v];
 
   }
