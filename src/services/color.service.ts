@@ -6,6 +6,11 @@ export class ColorService {
     return ((x%n)+n)%n;
   }
 
+  hueShiftHsv(hsvArray, shiftAmount) {
+    hsvArray[0] = hsvArray[0] + shiftAmount % 360;
+    return hsvArray;
+  }
+
   hexToHsv(hexString) {
     let r = parseInt(hexString.slice(1,3),16);
     let g = parseInt(hexString.slice(3,5),16);

@@ -20,6 +20,11 @@ export class CreatePage {
     this.currentColor = event;
     this.hsvColor = this.cl.hexToHsv(event);
     console.log(this.cl.hsvToHex(this.hsvColor));
+    let hueVar1 = this.cl.hsvToHex(this.cl.hueShiftHsv(this.hsvColor,90));
+    let hueVar2 = this.cl.hsvToHex(this.cl.hueShiftHsv(this.hsvColor,180));
+    let hueVar3 = this.cl.hsvToHex(this.cl.hueShiftHsv(this.hsvColor,270));
+    console.log(`${hueVar1}, ${hueVar2}, ${hueVar3}`);
+    
   }
 
 
