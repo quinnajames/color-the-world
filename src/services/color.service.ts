@@ -7,8 +7,13 @@ export class ColorService {
   }
 
   hueShiftHsv(hsvArray, shiftAmount) {
-    hsvArray[0] = hsvArray[0] + shiftAmount % 360;
-    return hsvArray;
+    let returnArray = [0, 0, 0];
+    console.log(hsvArray);
+    returnArray[0] = (hsvArray[0] + shiftAmount) % 360;
+    returnArray[1] = hsvArray[1];
+    returnArray[2] = hsvArray[2];
+    console.log(returnArray);
+    return returnArray;
   }
 
   hexToHsv(hexString) {
