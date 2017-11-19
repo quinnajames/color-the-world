@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-gallery',
@@ -7,8 +8,12 @@ import { NavController } from 'ionic-angular';
 })
 export class GalleryPage {
 
-  constructor(public navCtrl: NavController) {
-
+  saved: string[][]|null;
+  constructor(public navCtrl: NavController,
+  public storage: Storage) {
+    this.storage.get('colors').then((c) => {
+      this.saved = c;
+    });
   }
 
 }

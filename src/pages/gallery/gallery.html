@@ -7,17 +7,16 @@
 </ion-header>
 
 <ion-content>
-  <p>This is where you'll put saved palettes.</p>
-  <p>Maybe, you can export them in various ways (e.g. email, cloud.)</p>
-  <ion-list>
+  <p>Saved palettes:</p>
+  <ion-list *ngIf="saved">
     <ion-list-header>Gallery</ion-list-header>
-    <ion-item>
+    <ion-item *ngFor="let palette of saved">
       <ion-icon name="color-palette" item-start></ion-icon>
-      Gallery Item 1
-    </ion-item>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      Gallery Item 2
+      Palette based on {{palette[0]}}:
+      <div *ngFor="let color of palette">
+        <code>color:</code> {{color}} <div [style.background-color]="color" class="smallbox"></div>
+      </div>
+
     </ion-item>
   </ion-list>
 </ion-content>

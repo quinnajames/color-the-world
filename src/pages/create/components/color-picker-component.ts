@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'color-picker',
   template: `
-  <div>Color picker
+  <div>
   <p>
   <input type="color" id="html5colorpicker"
   (ngModelChange)="colorChange($event)"
