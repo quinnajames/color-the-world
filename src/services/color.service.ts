@@ -54,6 +54,14 @@ export class ColorService {
 
   }
 
+  roundArray(array) {
+    let returnArray = [];
+    array.forEach((e) => {
+      returnArray.push(Math.round(e));
+    })
+    return returnArray;
+  }
+
   hsvToHex(hsvArray) {
     let rgbArray = this.hsvToRgb(hsvArray);
     let str = '#';

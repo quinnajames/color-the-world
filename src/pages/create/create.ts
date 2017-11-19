@@ -19,7 +19,7 @@ export class CreatePage {
   handleColorChange(event) {
     console.log(`handleColorChange(${event})`);
     this.currentColor = event;
-    this.hsvColor = this.cl.hexToHsv(event);
+    this.hsvColor = this.cl.roundArray(this.cl.hexToHsv(event));
     console.log(this.cl.hsvToHex(this.hsvColor));
     this.variants = [];
     for (var x = 90; x < 360; x += 90) {
@@ -27,5 +27,6 @@ export class CreatePage {
     console.log(this.variants);
     }
   }
+
 
 }

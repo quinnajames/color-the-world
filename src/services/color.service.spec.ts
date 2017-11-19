@@ -11,6 +11,18 @@ describe('Service: ColorService', () => {
     '#c229b8',
     '#2943c4'
   ];
+  const hsvInputs = [
+    [33.934426229508176, 52.813528185281, 90.58823529411765],
+    [319.672131147541, 52.81385281385281, 90.58823529411765],
+    [0, 0, 52.549019607843135],
+    [359.62025316455697, 81.44329896907216, 76.07843137254902]
+  ];
+  const hsvTargets = [
+    [34, 53, 91],
+    [320, 53, 91],
+    [0, 0, 53],
+    [360, 81, 76] //color theory wise, first could also be 0
+  ];
   let service: ColorService;
   beforeEach(() => {
     service = new ColorService();
@@ -20,16 +32,14 @@ describe('Service: ColorService', () => {
   })
   it('running #hexToHsv then #hsvToHex should return the original input', () => {
 
-    expect(service.hsvToHex(service.hexToHsv(htmlInputs[0]))).toEqual(htmlInputs[0]);
-    expect(service.hsvToHex(service.hexToHsv(htmlInputs[1]))).toEqual(htmlInputs[1]);
-    expect(service.hsvToHex(service.hexToHsv(htmlInputs[2]))).toEqual(htmlInputs[2]);
-    expect(service.hsvToHex(service.hexToHsv(htmlInputs[3]))).toEqual(htmlInputs[3]);
-    expect(service.hsvToHex(service.hexToHsv(htmlInputs[4]))).toEqual(htmlInputs[4]);
-    expect(service.hsvToHex(service.hexToHsv(htmlInputs[5]))).toEqual(htmlInputs[5]);
-    expect(service.hsvToHex(service.hexToHsv(htmlInputs[6]))).toEqual(htmlInputs[6]);
-
-    // htmlInputs.forEach((i) => {
-    //   expect(service.hsvToHex(service.hexToHsv(i))).toEqual(i);
-    // })
+     htmlInputs.forEach((i) => {
+       expect(service.hsvToHex(service.hexToHsv(i))).toEqual(i);
+     })
   })
+  it('#roundArray should round HSVs correctly', () => {
+    for (let x = 0; x < hsvInputs.length; x++) {
+      expect(service.roundArray(hsvInputs[x])).toEqual(hsvTargets[x]);
+    }
+  })
+
 })
