@@ -13,5 +13,7 @@
   <p>Your chosen color: <code>{{currentColor}}</code></p>
   <p>HSV: <code *ngIf="hsvColor">{{hsvColor[0]}} {{hsvColor[1]}} {{hsvColor[2]}}</code></p>
   <p>Hue variants:</p>
-  
+  <div *ngFor="let color of variants">
+    <code>color:</code> {{color}} <div [style.background-color]="color" class="smallbox"></div>
+  </div>
 </ion-content>
