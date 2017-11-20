@@ -9,9 +9,11 @@ import { Storage } from '@ionic/storage';
 })
 export class SettingsPage {
   settings: SettingsService;
+  gallerySize: number;
   constructor(public navCtrl: NavController,
   public storage: Storage) {
     this.settings = SettingsService.getInstance();
+    this.gallerySize = this.settings.getGallerySize();
   }
 
   updateGallerySize(val: number) : void {
