@@ -8,6 +8,6 @@
 
 <ion-content padding>
 <p>This is where you'll be able to adjust certain settings.</p>
-<p>These might include hex vs rgb, size of palettes, and
-accessibility settings.</p>
+<p>Number of palettes to store in the gallery:
+<input type="number" min="1" max="50" value="5" [ngModel]="gallerySize" (ngModelChange)="updateGallerySize($event)" /></p>
 </ion-content>

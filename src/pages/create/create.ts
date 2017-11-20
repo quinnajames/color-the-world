@@ -45,6 +45,9 @@ export class CreatePage {
           colors.pop();
           colors.unshift(colorsToSave);
         }
+        else {
+          colors.push(colorsToSave);
+        }
       }
       else {
         colors = [colorsToSave];

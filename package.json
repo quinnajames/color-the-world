@@ -11,7 +11,8 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "test-coverage": "ng test --code-coverage",
-    "test": "ng test"
+    "test": "ng test",
+    "run": "ionic serve -p 8414"
   },
   "dependencies": {
     "@angular/compiler": "5.0.0",
