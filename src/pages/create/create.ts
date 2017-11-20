@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 import { ColorService } from '../../services/color.service';
 import { Storage } from '@ionic/storage';
+import { SettingsService } from '../../services/settings.service';
 
 @IonicPage()
 @Component({
@@ -15,11 +16,13 @@ export class CreatePage {
   variants: string[];
   colorStorageSize: number;
   colorsToSave: string[];
+  settings: SettingsService;
   constructor(public navCtrl: NavController,
   private cl: ColorService,
   private storage: Storage) {
     this.variants = [];
     this.colorStorageSize = 10;
+    this.settings = SettingsService.getInstance();
   }
   handleColorChange(event) {
     console.log(`handleColorChange(${event})`);
@@ -33,6 +36,15 @@ export class CreatePage {
     }
   }
 
+  ngOnInit() {
+    this.storage.get('gallerySize').then((size) => {
+      if (size && typeof size == "number" && size >= 1 && size <= 50) {
+        this.settings.setGallerySize(size);
+        this.colorStorageSize = size;
+      }
+    })
+  }
+
   saveColors() {
     let colorsToSave = [];
     colorsToSave.push(this.currentColor);
@@ -43,6 +55,12 @@ export class CreatePage {
       if (colors) {
         if (colors.length == this.colorStorageSize) {
           colors.pop();
+          colors.unshift(colorsToSave);
+        }
+        else if (colors.length > this.colorStorageSize) {
+          while(colors.length > this.colorStorageSize) {
+            colors.pop();
+          }
           colors.unshift(colorsToSave);
         }
         else {
